@@ -9,6 +9,7 @@ import { useQuest } from 'components/hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import { langChanger } from 'components/utils/utils';
 
+
 export default function DetailedQuest() {
   const {id} = useParams();
 
@@ -63,7 +64,9 @@ export default function DetailedQuest() {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {isBookingModalOpened && (
+            <BookingModal setIsBookingModalOpened={setIsBookingModalOpened} />
+        )}
       </S.Main>
     </MainLayout>
     )}

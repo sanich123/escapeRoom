@@ -14,7 +14,7 @@ export default function QuestsCatalog() {
   <>
     <S.Tabs>
     {Object.entries(types).map(([rus, svg]) => (
-      <S.TabItem>
+      <S.TabItem key={rus}>
         <S.TabBtn
         isActive={genreChanger(rus) === filter}
         onClick={() => setFilter(genreChanger(rus))}>

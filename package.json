@@ -11,6 +11,7 @@
     "concurrently": "6.3.0",
     "joi": "17.4.2",
     "json-server": "0.17.0",
+    "react-focus-on": "^3.5.4",
     "sass": "1.43.4"
   },
   "scripts": {

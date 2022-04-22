@@ -1,10 +1,14 @@
 import * as S from './booking-modal.styled';
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
+import { FocusOn } from 'react-focus-on';
 
-const BookingModal = () => (
+const BookingModal = ({setIsBookingModalOpened}) => (
   <S.BlockLayer>
+    <FocusOn
+      onClickOutside={() => setIsBookingModalOpened(false)}
+      onEscapeKey={() => setIsBookingModalOpened(false)}>
     <S.Modal>
-      <S.ModalCloseBtn>
+      <S.ModalCloseBtn onClick={() => setIsBookingModalOpened(false)}>
         <IconClose width="16" height="16" />
         <S.ModalCloseLabel>Закрыть окно</S.ModalCloseLabel>
       </S.ModalCloseBtn>
@@ -71,6 +75,7 @@ const BookingModal = () => (
         </S.BookingCheckboxWrapper>
       </S.BookingForm>
     </S.Modal>
+  </FocusOn>
   </S.BlockLayer>
 );
 
