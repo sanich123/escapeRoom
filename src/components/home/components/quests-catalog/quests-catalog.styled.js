@@ -168,7 +168,6 @@ const QuestImage = styled.img`
 
 const QuestFeatures = styled.ul`
   display: flex;
-
   margin: 0;
   padding: 0;
   list-style: none;
