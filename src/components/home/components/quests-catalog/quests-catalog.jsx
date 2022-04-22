@@ -7,11 +7,11 @@ import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
-import {useFetch} from '../../../hooks/useFetch';
+import { useQuests } from '../../../hooks/useFetch';
+import { langChanger } from '../../../utils/utils'
 
 function QuestsCatalog() {
-  const quests = useFetch();
-  console.log(quests);
+  const quests = useQuests();
 
   return (
   <>
@@ -62,7 +62,7 @@ function QuestsCatalog() {
     <S.QuestsList>
     {quests?.map(({id, coverImg, title, level, peopleCount}) => (
       <S.QuestItem key={id}>
-        <S.QuestItemLink to={`quest/${id}`}>
+        <S.QuestItemLink to={`/detailed-quest/${id}`}>
           <S.Quest>
             <S.QuestImage
               src={coverImg}
@@ -72,7 +72,7 @@ function QuestsCatalog() {
             />
 
             <S.QuestContent>
-              <S.QuestTitle>Склеп</S.QuestTitle>
+              <S.QuestTitle>{title}</S.QuestTitle>
 
               <S.QuestFeatures>
                 <S.QuestFeatureItem>
@@ -81,7 +81,7 @@ function QuestsCatalog() {
                 </S.QuestFeatureItem>
                 <S.QuestFeatureItem>
                   <IconPuzzle />
-                  {level}
+                  {langChanger(level)}
                 </S.QuestFeatureItem>
               </S.QuestFeatures>
             </S.QuestContent>
@@ -89,6 +89,9 @@ function QuestsCatalog() {
         </S.QuestItemLink>
       </S.QuestItem>
     ))}
+    {!quests && (
+      <h1>The list of quests is unavailable now</h1>
+    )}
     </S.QuestsList>
   </>
   )
