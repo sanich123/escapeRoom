@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
+import { rootUrl } from 'components/utils/const';
 
-export const useQuests = () => {
+export const useQuests = (filter) => {
   const [quests, setQuests] = useState();
 
   useEffect(() => {
     (async () => {
       try {
-        const quests = await (await fetch('http://localhost:3001/quests')).json();
+        const quests = await (await fetch(`${rootUrl}${filter ? `?type=${filter}` : ''}`)).json();
         setQuests(quests);
       }
       catch {
         <h1>Something is going wrong</h1>
       }
     })();
-  }, []);
+  }, [filter]);
 
   return quests;
 };
@@ -23,7 +24,7 @@ export const useQuest = (id) => {
   useEffect(() => {
     (async () => {
       try {
-        const quest = await (await fetch(`http://localhost:3001/quests/${id}`)).json();
+        const quest = await (await fetch(`${rootUrl}/${id}`)).json();
         setQuest(quest);
       }
       catch {
