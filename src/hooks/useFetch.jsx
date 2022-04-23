@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { rootUrl } from '../utils/const';
 
 export const useQuests = (filter) => {
@@ -8,13 +10,15 @@ export const useQuests = (filter) => {
     (async () => {
       try {
         const response = await fetch(`${rootUrl}${filter ? `?type=${filter}` : ''}`);
-        // eslint-disable-next-line no-console
-        console.log(response);
-        const result = await response.json();
-        setQuests(result);
+        if (response.ok) {
+          const result = await response.json();
+          setQuests(result);
+        } else {
+          toast.warn('Не удалось выполнить запрос к серверу, произошла ошибка.');
+        }
       }
       catch {
-        <h1>Something is going wrong</h1>;
+        toast.warn('Something is going wrong. Check you internet connection');
       }
     })();
   }, [filter]);
@@ -27,11 +31,16 @@ export const useQuest = (id) => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await (await fetch(`${rootUrl}/${id}`)).json();
-        setQuest(response);
+        const response = await fetch(`${rootUrl}/${id}`);
+        if (response.ok) {
+          const result = await response.json();
+          setQuest(result);
+        } else {
+          toast.warn('Не удалось выполнить запрос к серверу, произошла ошибка.');
+        }
       }
       catch {
-        <h1>something is going wrong</h1>;
+        toast.warn('Something is going wrong. Check you internet connection');
       }
     })();
   }, [id]);

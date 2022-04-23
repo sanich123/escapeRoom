@@ -1,6 +1,6 @@
 import { MainLayout, PageTitle, PageSubtext } from '../common/common';
 import * as S from './contacts.styled';
-// import contactsMap from '../../assets/img/contacts-map.jpg';
+import contactsMap from '../../assets/img/contacts-map.jpg';
 
 export default function Contacts() {
 
@@ -43,12 +43,12 @@ export default function Contacts() {
             </S.ContactsList>
 
             <S.ContactsMap>
-              {/* <S.ContactsMapImage
+              <S.ContactsMapImage
                 src={contactsMap}
                 alt="мы находимся по адресу Санкт-Петербург, Набережная реки Карповка, д 5"
                 width="649"
                 height="336"
-              /> */}
+              />
             </S.ContactsMap>
           </S.Contacts>
         </S.ContentWrapper>

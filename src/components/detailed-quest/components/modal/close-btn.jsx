@@ -2,6 +2,7 @@ import { ReactComponent as IconClose } from '../../../../assets/img/icon-close.s
 
 import { ModalCloseBtn, ModalCloseLabel } from './modal.styled';
 
+// eslint-disable-next-line react/prop-types
 export default function CloseBtn({setIsModalOpen}) {
 
   return (
