@@ -1,6 +1,8 @@
+import { ChildrenType } from '../../../types/types';
 import { Header, Footer } from '../common';
 
-export default function MainLayout({ children }: {children: string}) {
+export default function MainLayout({ children }: ChildrenType) {
+
   return (
     <>
       <Header />

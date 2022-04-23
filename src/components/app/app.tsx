@@ -7,10 +7,10 @@ import {
 
 import { appTheme } from './common';
 import * as S from './app.styled';
-import { Contacts } from '../contacts/contacts.styled';
+
 import DetailedQuest from '../detailed-quest/detailed-quest';
 import Home from '../home/home';
-
+import Contacts from '../contacts/contacts';
 export default function App() {
 
   return (

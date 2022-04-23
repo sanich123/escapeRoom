@@ -1,4 +1,4 @@
-import React from 'react';
+import { EvtType } from '../../../../../types/types';
 import { BookingField, BookingLabel, BookingInput } from '../modal.styled';
 
 interface AmountInputProps {
@@ -14,7 +14,7 @@ export default function AmountParticipantsInput({participants, setParticipants}:
             Количество участников
       </BookingLabel>
       <BookingInput
-        onChange={({target}: {target: {value: string}}): void => setParticipants(target.value)}
+        onChange={({target}: EvtType): void => setParticipants(target.value)}
         value={participants}
         type="number"
         id="booking-people"

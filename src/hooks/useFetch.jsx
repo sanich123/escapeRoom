@@ -7,8 +7,11 @@ export const useQuests = (filter) => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await (await fetch(`${rootUrl}${filter ? `?type=${filter}` : ''}`)).json();
-        setQuests(response);
+        const response = await fetch(`${rootUrl}${filter ? `?type=${filter}` : ''}`);
+        // eslint-disable-next-line no-console
+        console.log(response);
+        const result = await response.json();
+        setQuests(result);
       }
       catch {
         <h1>Something is going wrong</h1>;

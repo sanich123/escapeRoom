@@ -1,3 +1,4 @@
+import { EvtType } from '../../../../../types/types';
 import { BookingField, BookingInput, BookingLabel } from '../modal.styled';
 
 interface NameInputProps {
@@ -10,7 +11,7 @@ export default function NameInput({name, setName}: NameInputProps) {
     <BookingField>
       <BookingLabel htmlFor="booking-name">Ваше Имя</BookingLabel>
       <BookingInput
-        onChange={({target}: {target: {value: string}}) => setName(target.value)}
+        onChange={({target}: EvtType) => setName(target.value)}
         value={name}
         type="text"
         id="booking-name"
