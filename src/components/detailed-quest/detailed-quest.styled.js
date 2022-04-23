@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from 'components/common/common';
+import { Button } from '../../components/common/common';
 
 const Main = styled.main`
   max-width: 556px;

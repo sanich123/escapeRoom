@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from 'components/common/common';
+import { Container } from '../common/common';
 
 const Main = styled(Container)`
   max-width: 1080px;

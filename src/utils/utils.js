@@ -1,4 +1,4 @@
-import { genresList } from "./const";
+import { genresList } from './const';
 
 export const langChanger = (string) => {
   if (string === 'hard') {
@@ -8,7 +8,7 @@ export const langChanger = (string) => {
     return 'простой';
   }
   return 'средний';
-}
+};
 
 export const genreChanger = (genre) => {
   if (genre === genresList.allQuests) {
@@ -29,4 +29,4 @@ export const genreChanger = (genre) => {
   if (genre === genresList.sciFi) {
     return 'sci-fi';
   }
-}
+};

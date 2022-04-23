@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Container, Link as RouterLink } from 'components/common/common';
+import { Container, Link as RouterLink } from '../../../components/common/common';
 
 const StyledHeader = styled.header`
   z-index: 5;

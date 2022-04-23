@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'components/common/common';
+import { Link } from '../../../../components/common/common';
 
 const Tabs = styled.ul`
   display: flex;

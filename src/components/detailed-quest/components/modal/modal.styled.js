@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Button } from 'components/common/common';
-import IconTick from 'assets/img/icon-tick.svg';
+import { Button } from '../../../../components/common/common';
+import IconTick from '../../../../assets/img/icon-tick.svg';
 
 const BlockLayer = styled.div`
   z-index: 10;

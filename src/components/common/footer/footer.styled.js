@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { ReactComponent as InstagramIcon } from 'assets/img/icon-instagram-hover.svg';
-import { ReactComponent as VkIcon } from 'assets/img/icon-vk-hover.svg';
+import { ReactComponent as InstagramIcon } from '../../../assets/img/icon-instagram-hover.svg';
+import { ReactComponent as VkIcon } from '../../../assets/img/icon-vk-hover.svg';
 
 const StyledFooter = styled.footer`
   z-index: 5;

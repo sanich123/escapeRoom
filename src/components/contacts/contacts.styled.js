@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { PageHeading as Heading } from 'components/common/common';
-import contactsBg from 'assets/img/contacts-bg.jpg';
+import { PageHeading as Heading } from '../../components/common/common';
+import contactsBg from '../../assets/img/contacts-bg.jpg';
 
 const Main = styled.main`
   display: flex;
