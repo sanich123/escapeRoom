@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { rootUrl } from '../utils/const';
 
-export const useQuests = (filter) => {
+export const useQuests = (filter: string) => {
   const [quests, setQuests] = useState();
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export const useQuests = (filter) => {
   return quests;
 };
 
-export const useQuest = (id) => {
+export const useQuest = (id: string) => {
   const [quest, setQuest] = useState();
   useEffect(() => {
     (async () => {
