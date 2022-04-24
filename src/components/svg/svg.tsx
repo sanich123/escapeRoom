@@ -39,7 +39,7 @@ export function IconClock({height, width, ...props}: SvgProps) {
   );
 }
 
-export function IconPerson({ height, width, ...props }: SvgProps) {
+export function IconPerson({ height='16', width='16', ...props }: SvgProps) {
   return (
     <svg
       width={width}
@@ -60,7 +60,7 @@ export function IconPerson({ height, width, ...props }: SvgProps) {
   );
 }
 
-export function IconPuzzle({ height, width, ...props }: SvgProps) {
+export function IconPuzzle({ height='16', width='16', ...props }: SvgProps) {
   return (
     <svg
       width={width}
@@ -79,3 +79,4 @@ export function IconPuzzle({ height, width, ...props }: SvgProps) {
     </svg>
   );
 }
+

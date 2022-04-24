@@ -17,6 +17,10 @@ export interface QuestType {
 }
 
 export interface SvgProps {
-  width: string,
-  height: string,
+  width?: string,
+  height?: string,
+}
+
+export interface TabBtnProps {
+  isActive: boolean, onClick: (arg: string) => void
 }

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { QuestType } from '../types/types';
 import { rootUrl } from '../utils/const';
 
-export const useQuests = (filter: string) => {
-  const [quests, setQuests] = useState();
+export const useQuests = (filter: string | undefined) => {
+  const [quests, setQuests] = useState<QuestType[]>([]);
 
   useEffect(() => {
     (async () => {
