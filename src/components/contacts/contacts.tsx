@@ -46,16 +46,7 @@ export default function Contacts() {
 
             <S.ContactsMap>
               <Map width={649} height={336} defaultState={{ center: [59.968137, 30.316272], zoom: 16 }}>
-                <Placemark
-                  // options={{
-                  //   iconLayout: 'default#image',
-                  //   //https://img.icons8.com/ios-filled/2x/marker-${letter}.png
-                  //   iconImageHref: '../../assets/img/icon-puzzle.svg',
-                  //   iconImageSize: [50, 50]
-                  // }}
-                  geometry={coordinates}
-                >
-                </Placemark>
+                <Placemark geometry={coordinates}/>
               </Map>
             </S.ContactsMap>
           </S.Contacts>

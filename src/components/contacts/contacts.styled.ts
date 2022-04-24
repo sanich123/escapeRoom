@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PageHeading as Heading } from '../../components/common/common';
+import { PageHeading as Heading } from '../common/common';
 import contactsBg from '../../assets/img/contacts-bg.jpg';
 
 const Main = styled.main`
