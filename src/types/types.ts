@@ -13,5 +13,10 @@ export interface QuestType {
   coverImg: string,
   title: string,
   level: string,
-  peopleCount: number[],
+  peopleCount: number[]
+}
+
+export interface SvgProps {
+  width: string,
+  height: string,
 }

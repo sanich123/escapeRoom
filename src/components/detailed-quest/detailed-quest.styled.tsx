@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '../../components/common/common';
+import { Button } from '../common/common';
 
 const Main = styled.main`
   max-width: 556px;
@@ -107,7 +107,7 @@ const QuestDescription = styled.p`
   letter-spacing: 0.013em;
 `;
 
-const QuestBookingBtn = styled(Button).attrs({ type: 'button' })`
+const QuestBookingBtn = styled(Button).attrs({ type: 'button' })<{onClick: (arg: boolean) => void}>`
   margin-left: 2px;
 `;
 

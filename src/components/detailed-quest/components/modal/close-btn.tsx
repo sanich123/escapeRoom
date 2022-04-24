@@ -1,9 +1,7 @@
-import { ReactComponent as IconClose } from '../../../../assets/img/icon-close.svg';
-
 import { ModalCloseBtn, ModalCloseLabel } from './modal.styled';
+import { IconClose } from '../../../svg/svg';
 
-// eslint-disable-next-line react/prop-types
-export default function CloseBtn({setIsModalOpen}) {
+export default function CloseBtn({setIsModalOpen}: {setIsModalOpen: (arg: boolean) => void}) {
 
   return (
     <ModalCloseBtn onClick={() => setIsModalOpen(false)}>

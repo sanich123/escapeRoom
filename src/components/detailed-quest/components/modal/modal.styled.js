@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '../../../../components/common/common';
+import { Button } from '../../../common/common';
 import IconTick from '../../../../assets/img/icon-tick.svg';
 
 const BlockLayer = styled.div`
