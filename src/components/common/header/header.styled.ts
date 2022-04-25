@@ -1,10 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Container, NavLink as RouterLink } from '../common';
-
-interface LinkProps {
-  $isActiveLink?: boolean,
-  onClick?: (arg: boolean) => void
-}
 
 const StyledHeader = styled.header`
   z-index: 5;
@@ -69,7 +64,7 @@ const LinkItem = styled.li`
   }
 `;
 
-const Link = styled(RouterLink)<LinkProps>`
+const Link = styled(RouterLink)`
   display: block;
   max-width: 100px;
   font-size: ${({ theme }) => theme.font.semibase};
@@ -79,14 +74,7 @@ const Link = styled(RouterLink)<LinkProps>`
   text-transform: uppercase;
 
   color: ${({ theme }) => theme.color.whiteSmoke};
-
-  ${({ $isActiveLink }) =>
-    $isActiveLink &&
-    css`
-      color: ${({ theme }) => theme.color.tangerine};
-    `}
-
-  &:focus,
+    &:focus,
   &:hover {
     color: ${({ theme }) => theme.color.tangerine};
   }

@@ -29,8 +29,8 @@ export const rootUrl = 'http://localhost:3001/quests';
 
 export const navLinks = {
   'Квесты': '/',
-  'Новичкам': '/',
-  'Отзывы': '/',
-  'Акции': '/',
+  'Новичкам': '/novices',
+  'Отзывы': '/reviews',
+  'Акции': '/discounts',
   'Контакты': '/contacts',
 };
