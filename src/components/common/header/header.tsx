@@ -7,8 +7,13 @@ export default function Header() {
   return (
     <StyledHeader>
       <HeaderWrapper>
-        <Logo>
-          <Image src={logo} alt="Логотип Escape Room" width="134" height="50" />
+        <Logo to='/'>
+          <Image
+            src={logo}
+            alt="Логотип Escape Room"
+            width="134"
+            height="50"
+          />
         </Logo>
 
         <Navigation>
@@ -16,11 +21,13 @@ export default function Header() {
             {Object.entries(navLinks).map(([rus, path]) => (
               <LinkItem key={rus}>
                 <Link
-                  exact to={path}
+                  exact
+                  to={path}
                   activeStyle={{
-                    color: '#F2890F'
+                    color: '#F2890F',
                   }}
-                >{rus}
+                >
+                  {rus}
                 </Link>
               </LinkItem>
             ))}

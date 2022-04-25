@@ -34,3 +34,8 @@ export const navLinks = {
   'Акции': '/discounts',
   'Контакты': '/contacts',
 };
+
+export const appRoutes = {
+  main: '/',
+  contacts: '/contacts',
+};

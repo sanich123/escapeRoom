@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, NavLink as RouterLink } from '../common';
+import { Container, NavLink } from '../common';
 
 const StyledHeader = styled.header`
   z-index: 5;
@@ -23,7 +23,7 @@ const HeaderWrapper = styled(Container)`
   padding-left: 32px;
 `;
 
-const Logo = styled.a`
+const Logo = styled(NavLink)`
   margin-right: 250px;
 
   @media (max-width: 1300px) {
@@ -31,7 +31,7 @@ const Logo = styled.a`
   }
 `;
 
-const LogoLink = styled(RouterLink)`
+const LogoLink = styled(NavLink)`
   margin-right: 250px;
 
   @media (max-width: 1300px) {
@@ -64,7 +64,7 @@ const LinkItem = styled.li`
   }
 `;
 
-const Link = styled(RouterLink)`
+const Link = styled(NavLink)`
   display: block;
   max-width: 100px;
   font-size: ${({ theme }) => theme.font.semibase};

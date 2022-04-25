@@ -24,3 +24,17 @@ export interface SvgProps {
 export interface TabBtnProps {
   isActive: boolean, onClick: (arg: string) => void
 }
+
+export interface GlobalStyleProps {
+  theme: {
+    font: {
+    base: string
+  }
+  color: {
+    whisper: string,
+    nero: string,
+    black: string,
+    white: string,
+  }
+}
+}
