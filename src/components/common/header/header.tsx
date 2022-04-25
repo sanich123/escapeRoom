@@ -1,10 +1,12 @@
 import logo from '../../../assets/img/logo.svg';
 import { navLinks } from '../../../utils/const';
+import { StyledHeader, HeaderWrapper, Logo, Image, Navigation, Links, LinkItem, Link, Phone } from './header.styled';
 import { useState } from 'react';
-import { StyledHeader, HeaderWrapper, Logo, Image, Navigation, Links, LinkItem, Link, Phone } from '../header/header.styled';
+
 export default function Header() {
   const [isActive, setIsActive] = useState('Квесты');
-
+  // eslint-disable-next-line no-console
+  // console.log(isActive);
   return (
     <StyledHeader>
       <HeaderWrapper>
@@ -18,7 +20,9 @@ export default function Header() {
               <LinkItem key={rus}>
                 <Link
                   $isActiveLink={isActive === rus}
-                  onClick={() => setIsActive(rus)}to={path}
+                  onClick={() => setIsActive(rus)}
+                  to={path}
+                  exact
                 >
                   {rus}
                 </Link>
