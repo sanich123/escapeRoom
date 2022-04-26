@@ -2,6 +2,7 @@ import { MainLayout, PageTitle, PageSubtext } from '../common/common';
 import * as S from './contacts.styled';
 import { Map, Placemark } from 'react-yandex-maps';
 import { YMaps } from 'react-yandex-maps';
+
 const coordinates = [59.968137, 30.316272];
 
 export default function Contacts() {
@@ -49,7 +50,7 @@ export default function Contacts() {
                 <Map
                   width={649}
                   height={336}
-                  defaultState={{ center: [59.968137, 30.316272], zoom: 16 }}
+                  defaultState={{ center: coordinates, zoom: 16 }}
                 >
                   <Placemark geometry={coordinates} />
                 </Map>

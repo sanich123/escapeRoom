@@ -4,8 +4,15 @@ export interface ChildrenType {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: string | ReactElement | any,
 }
+
 export interface EvtType {
-  target: {value: string}
+  target: {
+    value: string
+  }
+}
+
+export interface ParamsProps {
+  id: string,
 }
 
 export interface QuestType {
@@ -22,19 +29,20 @@ export interface SvgProps {
 }
 
 export interface TabBtnProps {
-  isActive: boolean, onClick: (arg: string) => void
+  isActive: boolean,
+  onClick: (arg: string) => void
 }
 
 export interface GlobalStyleProps {
   theme: {
     font: {
-    base: string
+      base: string
+    }
+    color: {
+      whisper: string,
+      nero: string,
+      black: string,
+      white: string,
+    }
   }
-  color: {
-    whisper: string,
-    nero: string,
-    black: string,
-    white: string,
-  }
-}
 }

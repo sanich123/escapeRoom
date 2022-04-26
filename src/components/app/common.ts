@@ -1,4 +1,4 @@
-const appTheme = {
+export const appTheme = {
   font: {
     mini: '12px',
     small: '13px',
@@ -26,5 +26,3 @@ const appTheme = {
     pinkSwan: '#B8B8B8',
   },
 };
-
-export { appTheme };
