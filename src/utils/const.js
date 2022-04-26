@@ -39,3 +39,13 @@ export const appRoutes = {
   main: '/',
   contacts: '/contacts',
 };
+
+export const defaultQuest = {
+  coverImg: 'default',
+  title: 'default',
+  type: 'default',
+  duration: 0,
+  peopleCount: [0, 0],
+  level: 'default',
+  description: 'default',
+};

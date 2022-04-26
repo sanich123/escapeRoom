@@ -4,29 +4,29 @@ import { IconClock, IconPerson, IconPuzzle } from '../svg/svg';
 import { BookingModal } from './components/components';
 import { useParams } from 'react-router-dom';
 import { langChanger } from '../../utils/utils';
-import { useQuest } from '../../hooks/useFetch';
 import Loader from '../common/loading/loading';
 import { Main, PageImage, PageContentWrapper, PageSubtitle, PageDescription, Features, FeaturesItem, FeatureTitle, QuestBookingBtn, QuestDescription } from './detailed-quest.styled';
+import { useGetQuestQuery } from '../../redux/quests-api';
+import { defaultQuest } from '../../utils/const';
 
 export default function DetailedQuest() {
   const {id}: {id: string} = useParams();
+  const {data: quest, isLoading, isError, isSuccess} = useGetQuestQuery(id);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const quest = useQuest(id);
 
-  if (!quest) {return <Loader/>;}
-
-  const {coverImg, title, type, duration, peopleCount, level, description} = quest;
+  const {coverImg, title, type, duration, peopleCount, level, description} = quest || defaultQuest;
 
   return (
     <>
-      {!quest && <h1>Не удалось получить данные по квесту</h1>}
-
-      {quest && (
+      {isError && <h1>Не удалось получить данные по квесту</h1>}
+      {isLoading && <Loader/>}
+      {isSuccess && (
         <MainLayout>
           <Main>
             <PageImage
               src={`../${coverImg}`}
-              alt="Квест Маньяк"
+              alt={`Квест ${title}`}
               width="1366"
               height="768"
             />
@@ -56,7 +56,9 @@ export default function DetailedQuest() {
                   {description}
                 </QuestDescription>
 
-                <QuestBookingBtn onClick={() => setIsModalOpen(true)}>
+                <QuestBookingBtn
+                  onClick={() => setIsModalOpen(true)}
+                >
               Забронировать
                 </QuestBookingBtn>
               </PageDescription>

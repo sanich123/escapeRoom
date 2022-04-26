@@ -1,6 +1,8 @@
 import { genresList } from './const';
+import { SerializedError } from '@reduxjs/toolkit';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 
-export const langChanger = (string) => {
+export const langChanger = (string: string) => {
   if (string === 'hard') {
     return 'тяжелый';
   }
@@ -10,7 +12,7 @@ export const langChanger = (string) => {
   return 'средний';
 };
 
-export const genreChanger = (genre) => {
+export const genreChanger = (genre: string) => {
   if (genre === genresList.allQuests) {
     return '';
   }
@@ -26,7 +28,7 @@ export const genreChanger = (genre) => {
   if (genre === genresList.horrors) {
     return 'horror';
   }
-  if (genre === genresList.sciFi) {
-    return 'sci-fi';
-  }
+  return 'sci-fi';
 };
+
+export const normalizedError = (error: SerializedError | FetchBaseQueryError) => JSON.parse(JSON.stringify(error));
