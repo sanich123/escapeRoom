@@ -43,6 +43,7 @@ export interface GlobalStyleProps {
       nero: string,
       black: string,
       white: string,
+      tangerine: string,
     }
   }
 }

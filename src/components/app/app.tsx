@@ -6,6 +6,7 @@ import DetailedQuest from '../detailed-quest/detailed-quest';
 import Home from '../home/home';
 import Contacts from '../contacts/contacts';
 import Page404 from '../page404/not-found-page';
+import { appRoutes } from '../../utils/const';
 
 export default function App() {
   return (
@@ -13,9 +14,9 @@ export default function App() {
       <GlobalStyle />
       <Router>
         <Switch>
-          <Route exact path="/detailed-quest/:id" component={() => <DetailedQuest />} />
-          <Route exact path="/contacts" component={() => <Contacts />} />
-          <Route exact path="/" component={() => <Home />} />
+          <Route exact path={`${appRoutes.quest}/:id`} component={() => <DetailedQuest />} />
+          <Route exact path={appRoutes.contacts} component={() => <Contacts />} />
+          <Route exact path={appRoutes.main} component={() => <Home />} />
           <Page404/>
         </Switch>
       </Router>

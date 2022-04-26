@@ -1,6 +1,6 @@
 import logo from '../../../assets/img/logo.svg';
-import { appRoutes, navLinks } from '../../../utils/const';
-import { StyledHeader, HeaderWrapper, Logo, Image, Navigation, Links, LinkItem, Link, Phone } from './header.styled';
+import { appRoutes, navLinks, PHONE_NUMBER } from '../../../utils/const';
+import { StyledHeader, HeaderWrapper, Logo, Links, LinkItem, Link, Phone } from './header.styled';
 
 export default function Header() {
 
@@ -8,15 +8,10 @@ export default function Header() {
     <StyledHeader>
       <HeaderWrapper>
         <Logo to={appRoutes.main}>
-          <Image
-            src={logo}
-            alt="Логотип Escape Room"
-            width="134"
-            height="50"
-          />
+          <img src={logo} alt="Логотип Escape Room" width="134" height="50" />
         </Logo>
 
-        <Navigation>
+        <nav>
           <Links>
             {Object.entries(navLinks).map(([rus, path]) => (
               <LinkItem key={rus}>
@@ -32,8 +27,8 @@ export default function Header() {
               </LinkItem>
             ))}
           </Links>
-        </Navigation>
-        <Phone href="tel:88003335599">8 (800) 333-55-99</Phone>
+        </nav>
+        <Phone href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</Phone>
       </HeaderWrapper>
     </StyledHeader>
   );

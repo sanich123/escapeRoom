@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-
 import RalewayRegularWoff2 from '../../assets/fonts/raleway-regular.woff2';
 import RalewayMediumWoff2 from '../../assets/fonts/raleway-medium.woff2';
 import RalewaySemiBoldWoff2 from '../../assets/fonts/raleway-semibold.woff2';
@@ -8,7 +7,7 @@ import RalewayExtraBoldWoff2 from '../../assets/fonts/raleway-extrabold.woff2';
 import RalewayBlackWoff2 from '../../assets/fonts/raleway-black.woff2';
 import { GlobalStyleProps } from '../../types/types';
 
-const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   @font-face {
     font-family: 'Raleway';
     font-style: normal;
@@ -185,5 +184,3 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     overflow: hidden;
   }
 `;
-
-export { GlobalStyle };

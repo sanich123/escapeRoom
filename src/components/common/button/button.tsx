@@ -1,4 +1,3 @@
-import React from 'react';
 import { ChildrenType } from '../../../types/types';
 import * as S from './button.styled';
 

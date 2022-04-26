@@ -39,10 +39,6 @@ const LogoLink = styled(NavLink)`
   }
 `;
 
-const Navigation = styled.nav``;
-
-const Image = styled.img``;
-
 const Links = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -102,8 +98,6 @@ export {
   HeaderWrapper,
   Logo,
   LogoLink,
-  Navigation,
-  Image,
   Links,
   LinkItem,
   Link,

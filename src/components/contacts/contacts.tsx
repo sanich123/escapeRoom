@@ -2,8 +2,7 @@ import { MainLayout, PageTitle, PageSubtext } from '../common/common';
 import * as S from './contacts.styled';
 import { Map, Placemark } from 'react-yandex-maps';
 import { YMaps } from 'react-yandex-maps';
-
-const coordinates = [59.968137, 30.316272];
+import { COORDINATES, MAP_HEIGHT, MAP_WIDTH, PHONE_NUMBER } from '../../utils/const';
 
 export default function Contacts() {
 
@@ -33,8 +32,8 @@ export default function Contacts() {
 
                 <S.ContactTitle>Телефон</S.ContactTitle>
                 <S.ContactValue>
-                  <S.ContactLink href="tel:8 (800) 333-55-99">
-                    8 (800) 333-55-99
+                  <S.ContactLink href={`tel:${PHONE_NUMBER}`}>
+                    {PHONE_NUMBER}
                   </S.ContactLink>
                 </S.ContactValue>
 
@@ -48,11 +47,11 @@ export default function Contacts() {
 
               <S.ContactsMap>
                 <Map
-                  width={649}
-                  height={336}
-                  defaultState={{ center: coordinates, zoom: 16 }}
+                  width={MAP_WIDTH}
+                  height={MAP_HEIGHT}
+                  defaultState={{ center: COORDINATES, zoom: 16 }}
                 >
-                  <Placemark geometry={coordinates} />
+                  <Placemark geometry={COORDINATES} />
                 </Map>
               </S.ContactsMap>
             </S.Contacts>
