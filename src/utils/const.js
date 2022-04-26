@@ -25,7 +25,7 @@ export const types = {
   'Sci-fi': <IconScifi />,
 };
 
-export const rootUrl = 'http://localhost:3001/quests';
+export const ROOT_URL = 'http://localhost:3001/quests';
 
 export const navLinks = {
   'Квесты': '/',

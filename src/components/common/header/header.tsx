@@ -1,5 +1,5 @@
 import logo from '../../../assets/img/logo.svg';
-import { navLinks } from '../../../utils/const';
+import { appRoutes, navLinks } from '../../../utils/const';
 import { StyledHeader, HeaderWrapper, Logo, Image, Navigation, Links, LinkItem, Link, Phone } from './header.styled';
 
 export default function Header() {
@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <HeaderWrapper>
-        <Logo to='/'>
+        <Logo to={appRoutes.main}>
           <Image
             src={logo}
             alt="Логотип Escape Room"

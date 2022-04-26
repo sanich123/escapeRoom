@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { QuestType } from '../types/types';
-import { rootUrl } from '../utils/const';
+import { ROOT_URL } from '../utils/const';
 
 export const useQuests = (filter: string | undefined) => {
   const [quests, setQuests] = useState<QuestType[]>([]);
@@ -9,7 +9,7 @@ export const useQuests = (filter: string | undefined) => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(`${rootUrl}${filter ? `?type=${filter}` : ''}`);
+        const response = await fetch(`${ROOT_URL}${filter ? `?type=${filter}` : ''}`);
         if (response.ok) {
           const result = await response.json();
           setQuests(result);
@@ -31,7 +31,7 @@ export const useQuest = (id: string) => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(`${rootUrl}/${id}`);
+        const response = await fetch(`${ROOT_URL}/${id}`);
         if (response.ok) {
           const result = await response.json();
           setQuest(result);
