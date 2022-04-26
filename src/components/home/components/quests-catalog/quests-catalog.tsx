@@ -62,7 +62,7 @@ export default function QuestsCatalog() {
 
         {isLoading && <Loader />}
 
-        {isError && <h1>{messages.failedQuests}</h1>}
+        {isError && <h2>{messages.failedQuests}</h2>}
       </QuestsList>
     </>
   );

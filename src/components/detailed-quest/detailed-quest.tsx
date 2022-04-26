@@ -19,7 +19,7 @@ export default function DetailedQuest() {
 
   return (
     <>
-      {isError && <h1>{messages.failedQuest}</h1>}
+      {isError && <h2>{messages.failedQuest}</h2>}
       {isLoading && <Loader/>}
       {isSuccess && (
         <MainLayout>
