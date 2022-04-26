@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
+import { GlobalStyle }from './app.styled';
 import { Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import { appTheme } from './common';
-import { GlobalStyle }from './app.styled';
 import DetailedQuest from '../detailed-quest/detailed-quest';
 import Home from '../home/home';
 import Contacts from '../contacts/contacts';
