@@ -26,13 +26,19 @@ export const types = {
 };
 
 export const ROOT_URL = 'http://localhost:3001/quests';
+export const BASE_URL = 'http://localhost:3001/';
+
+export const apiRoutes = {
+  quests: 'quests',
+  orders: 'orders'
+};
 
 export const navLinks = {
   'Квесты': '/',
   'Новичкам': '/novices',
   'Отзывы': '/reviews',
   'Акции': '/discounts',
-  'Контакты': '/contacts',
+  'Контакты': '/contacts'
 };
 
 export const appRoutes = {
@@ -48,4 +54,10 @@ export const defaultQuest = {
   peopleCount: [0, 0],
   level: 'default',
   description: 'default',
+};
+
+export const messages = {
+  success: 'Your data has successfully sended! Hurray!',
+  failedQuest: 'Не удалось получить данные по квесту',
+  failedQuests: 'The list of quests is unavailable now',
 };

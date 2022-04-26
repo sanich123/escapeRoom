@@ -1,15 +1,15 @@
-import { Tabs, TabItem, TabBtn, TabTitle, Quest, QuestContent, QuestFeatureItem, QuestFeatures, QuestImage, QuestItem, QuestItemLink, QuestsList, QuestTitle } from './quests-catalog.styled';
-import { langChanger, genreChanger } from '../../../../utils/utils';
 import { useState } from 'react';
-import { types } from '../../../../utils/const';
-import { IconPerson, IconPuzzle } from '../../../svg/svg';
-import Loader from '../../../common/loading/loading';
-import { QuestType } from '../../../../types/types';
 import { useGetQuestsQuery } from '../../../../redux/quests-api';
+import { Tabs, TabItem, TabBtn, TabTitle, Quest, QuestContent, QuestFeatureItem, QuestFeatures, QuestImage, QuestItem, QuestItemLink, QuestsList, QuestTitle } from './quests-catalog.styled';
+import Loader from '../../../common/loading/loading';
+import { langChanger, genreChanger } from '../../../../utils/utils';
+import { messages, types } from '../../../../utils/const';
+import { IconPerson, IconPuzzle } from '../../../svg/svg';
+import { QuestType } from '../../../../types/types';
 
 export default function QuestsCatalog() {
   const [filter, setFilter] = useState('');
-  const {data: quests, isLoading, isSuccess, isError} = useGetQuestsQuery(filter ? `?type=${filter}` : '');
+  const { data: quests, isLoading, isSuccess, isError } = useGetQuestsQuery(filter ? `?type=${filter}` : '');
 
   return (
     <>
@@ -62,9 +62,8 @@ export default function QuestsCatalog() {
 
         {isLoading && <Loader />}
 
-        {isError && <h1>The list of quests is unavailable now</h1>}
+        {isError && <h1>{messages.failedQuests}</h1>}
       </QuestsList>
     </>
   );
 }
-

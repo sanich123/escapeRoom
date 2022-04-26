@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { useForm } from '../../../../../hooks/useForm';
 import { useAddOrderMutation } from '../../../../../redux/quests-api';
 import { normalizedError } from '../../../../../utils/utils';
+import {messages} from '../../../../../utils/const';
 
 interface FormProps {
   setIsModalOpen: (arg: boolean) => void,
@@ -30,7 +31,7 @@ export default function Form({setIsModalOpen}: FormProps) {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success('Your data has successfully sended! Hurray!');
+      toast.success(messages.success);
       setIsModalOpen(false);
     }
     if (error) {

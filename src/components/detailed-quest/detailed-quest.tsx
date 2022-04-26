@@ -7,7 +7,7 @@ import { langChanger } from '../../utils/utils';
 import Loader from '../common/loading/loading';
 import { Main, PageImage, PageContentWrapper, PageSubtitle, PageDescription, Features, FeaturesItem, FeatureTitle, QuestBookingBtn, QuestDescription } from './detailed-quest.styled';
 import { useGetQuestQuery } from '../../redux/quests-api';
-import { defaultQuest } from '../../utils/const';
+import { defaultQuest, messages } from '../../utils/const';
 
 export default function DetailedQuest() {
   const {id}: {id: string} = useParams();
@@ -19,7 +19,7 @@ export default function DetailedQuest() {
 
   return (
     <>
-      {isError && <h1>Не удалось получить данные по квесту</h1>}
+      {isError && <h1>{messages.failedQuest}</h1>}
       {isLoading && <Loader/>}
       {isSuccess && (
         <MainLayout>
