@@ -8,7 +8,7 @@ import AgreeCheckbox from './agree-checkbox';
 import { toast } from 'react-toastify';
 import { useForm } from '../../../../../hooks/useForm';
 import { useAddOrderMutation } from '../../../../../redux/quests-api';
-import { normalizedError } from '../../../../../utils/utils';
+import { errorHandler } from '../../../../../utils/utils';
 import {messages} from '../../../../../utils/const';
 
 interface FormProps {
@@ -35,7 +35,7 @@ export default function Form({setIsModalOpen}: FormProps) {
       setIsModalOpen(false);
     }
     if (error) {
-      toast.warn(normalizedError(error).data.messages.join(''));
+      errorHandler(error);
     }
   }, [isSuccess, setIsModalOpen, error]);
 

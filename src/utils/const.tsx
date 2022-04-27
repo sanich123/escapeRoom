@@ -79,6 +79,9 @@ export const messages = {
   success: 'Your data has successfully sended! Hurray!',
   failedQuest: 'Не удалось получить данные по квесту',
   failedQuests: 'The list of quests is unavailable now',
+  networkProblem:
+    'не удалось отправить ваши данные. Проверьте, есть ли интернет в вашей стране!',
+  wrongAddress: 'Неправильный адрес',
 };
 
 

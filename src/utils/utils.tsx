@@ -1,6 +1,8 @@
-import { levelsEng, levelsRu, genresListRu, genresListEng } from './const';
+import { levelsEng, levelsRu, genresListRu, genresListEng, messages } from './const';
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
+import { toast } from 'react-toastify';
+import Page404 from '../components/page404/not-found-page';
 
 export const langChanger = (string: string) => {
   switch (string) {
@@ -23,3 +25,23 @@ export const genreChanger = (genre: string) => {
 };
 
 export const normalizedError = (error: SerializedError | FetchBaseQueryError) => JSON.parse(JSON.stringify(error));
+
+export const errorHandler = (error: SerializedError | FetchBaseQueryError) => {
+  const info = normalizedError(error);
+  if (info.status === 404) {
+    toast.warn(messages.wrongAddress);
+    return <Page404/>;
+  } else if (info.status === 400) {
+    toast.error(normalizedError(error).data.messages.join(''));
+    return <h1>Неправильные данные</h1>;
+  } else {
+    toast.error(
+      `${info.status} ${info.error} ${messages.networkProblem}`,
+    );
+    return (
+      <h1>
+        `${info.status} ${info.error} ${messages.networkProblem}`
+      </h1>
+    );
+  }
+};
