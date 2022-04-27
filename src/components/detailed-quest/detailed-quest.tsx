@@ -20,7 +20,6 @@ export default function DetailedQuest() {
     <>
       {isLoading && <Loader />}
 
-
       <MainLayout>
         <Main>
           <PageImage
@@ -51,9 +50,7 @@ export default function DetailedQuest() {
                   <FeatureTitle>{langChanger(level)}</FeatureTitle>
                 </FeaturesItem>
               </Features>
-
               <QuestDescription>{description}</QuestDescription>
-
               <QuestBookingBtn onClick={() => setIsModalOpen(true)}>
                   Забронировать
               </QuestBookingBtn>
