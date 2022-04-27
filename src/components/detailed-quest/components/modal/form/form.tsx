@@ -9,24 +9,15 @@ import { toast } from 'react-toastify';
 import { useForm } from '../../../../../hooks/useForm';
 import { useAddOrderMutation } from '../../../../../redux/quests-api';
 import { errorHandler } from '../../../../../utils/utils';
-import {messages} from '../../../../../utils/const';
+import { messages } from '../../../../../utils/const';
 
-interface FormProps {
-  setIsModalOpen: (arg: boolean) => void,
-}
-
-export default function Form({setIsModalOpen}: FormProps) {
+export default function Form({setIsModalOpen}: { setIsModalOpen: (arg: boolean) => void }) {
   const {name, phone, participants, agreed, setName, setPhone, setParticipants, setIsAgreed} = useForm();
   const [addOrder, {isSuccess, error}] = useAddOrderMutation();
 
   const handleSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault();
-    await addOrder({
-      name,
-      peopleCount: Number(participants),
-      phone,
-      isLegal: agreed
-    }).unwrap();
+    await addOrder({ name, peopleCount: Number(participants), phone, isLegal: agreed }).unwrap();
   };
 
   useEffect(() => {

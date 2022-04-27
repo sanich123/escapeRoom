@@ -1,4 +1,4 @@
-import { levelsEng, levelsRu, genresListRu, genresListEng, messages } from './const';
+import { levelsEng, levelsRu, genresListRu, genresListEng, messages, badResponses } from './const';
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 import { toast } from 'react-toastify';
@@ -28,16 +28,14 @@ export const normalizedError = (error: SerializedError | FetchBaseQueryError) =>
 
 export const errorHandler = (error: SerializedError | FetchBaseQueryError) => {
   const info = normalizedError(error);
-  if (info.status === 404) {
+  if (info.status === badResponses.notFound) {
     toast.warn(messages.wrongAddress);
     return <Page404/>;
-  } else if (info.status === 400) {
+  } else if (info.status === badResponses.wrongData) {
     toast.error(normalizedError(error).data.messages.join(''));
     return <h1>Неправильные данные</h1>;
   } else {
-    toast.error(
-      `${info.status} ${info.error} ${messages.networkProblem}`,
-    );
+    toast.error(`${info.status} ${info.error} ${messages.networkProblem}`);
     return (
       <h1>
         `${info.status} ${info.error} ${messages.networkProblem}`

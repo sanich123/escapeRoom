@@ -75,13 +75,16 @@ export const defaultQuest = {
   description: 'default',
 };
 
+export const badResponses = {
+  notFound: 404,
+  wrongData: 400,
+} as const;
+
 export const messages = {
   success: 'Your data has successfully sended! Hurray!',
-  failedQuest: 'Не удалось получить данные по квесту',
   failedQuests: 'The list of quests is unavailable now',
-  networkProblem:
-    'не удалось отправить ваши данные. Проверьте, есть ли интернет в вашей стране!',
-  wrongAddress: 'Неправильный адрес',
-};
+  networkProblem: 'не удалось отправить (или получить) данные. Проверьте, есть ли интернет в вашей стране!',
+  wrongAddress: 'The request was send, but it occured, that server might be on another path. Check you path, motherfucker!',
+} as const;
 
 
